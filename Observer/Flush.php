@@ -20,6 +20,10 @@ class Flush implements \Magento\Framework\Event\ObserverInterface
      */
     private $manager;
 
+    /**
+     * @param \Mygento\CacheInvalidate\Model\Manager $manager
+     * @param \Magento\PageCache\Model\Config $config
+     */
     public function __construct(
         \Mygento\CacheInvalidate\Model\Manager $manager,
         \Magento\PageCache\Model\Config $config
@@ -29,7 +33,10 @@ class Flush implements \Magento\Framework\Event\ObserverInterface
     }
 
     /**
+     * Execute
      * @param \Magento\Framework\Event\Observer $observer
+     *
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
     public function execute(\Magento\Framework\Event\Observer $observer)
     {
