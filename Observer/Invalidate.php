@@ -41,6 +41,7 @@ class Invalidate implements \Magento\Framework\Event\ObserverInterface
     }
 
     /**
+     * Execute
      * @param \Magento\Framework\Event\Observer $observer
      */
     public function execute(\Magento\Framework\Event\Observer $observer)
@@ -57,7 +58,7 @@ class Invalidate implements \Magento\Framework\Event\ObserverInterface
         $tags = $this->resolver->getTags($object);
 
         if (!empty($tags)) {
-            $this->manager->publish(array_unique($tags));
+            $this->manager->publish(array_map('strtoupper', array_unique($tags)));
         }
     }
 }

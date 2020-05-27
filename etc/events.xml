@@ -18,9 +18,6 @@
     <event name="catalogrule_after_apply">
         <observer name="flush_upward_pagecache" instance="Mygento\CacheInvalidate\Observer\Invalidate"/>
     </event>
-    <event name="adminhtml_cache_refresh_type">
-        <observer name="flush_upward_pagecache" instance="Mygento\CacheInvalidate\Observer\Flush"/>
-    </event>
     <event name="adminhtml_cache_flush_all">
         <observer name="flush_upward_pagecache" instance="Mygento\CacheInvalidate\Observer\Flush"/>
     </event>
